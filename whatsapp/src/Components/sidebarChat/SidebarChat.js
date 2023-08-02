@@ -9,14 +9,18 @@ function SidebarChat({ id, addNewChat, name }) {
   const [messages, setMessages] = useState("");
 
   const createChat = () => {
+    // when clicked in add new chat it pops up a message with and input from
     const roomName = prompt("please enter name for chat room");
+    // roomName is the one typed on the form
     if (roomName) {
+      // if there is a roomname add the name to db in rooms-name collections(automitcally with generate id)
       db.collection("rooms").add({
         name: roomName,
       });
     }
   };
-  // getting the messages and ordering it by desending from
+
+  // getting the messages and ordering it by desending from(so that we can diplay the latest messgage)
   useEffect(() => {
     if (id) {
       db.collection("rooms")
@@ -28,7 +32,9 @@ function SidebarChat({ id, addNewChat, name }) {
         );
     }
   }, [id]);
+
   return !addNewChat ? (
+    // when clicked go based on the id(unique)
     <Link to={`/rooms/${id}`}>
       <div className="sidebarChat">
         <img src={image} />

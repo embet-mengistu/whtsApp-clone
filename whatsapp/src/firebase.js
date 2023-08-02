@@ -13,15 +13,18 @@ const firebaseConfig = {
   measurementId: "G-4RVJRL6FBJ",
 };
 
-// const firebaseApp = firebase.initializeApp(firebaseConfig);
-// const db = firebaseApp.firestore();
-// const auth = firebase.auth();
-// const provider = new firebase.auth.GoogleAuthProvider();
-
 const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+// accessing the authentication
 const auth = firebase.auth();
+
+// accessing the datbase
 const db = firebaseApp.firestore();
+
+// authentication from google
 const provider = new firebase.auth.GoogleAuthProvider();
 
 export { auth, provider };
+
+// making it default bc it mostly used in the components
 export default db;

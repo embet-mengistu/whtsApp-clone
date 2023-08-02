@@ -19,3 +19,12 @@ a {
   text-decoration: none;
   color: black;
 }
+
+.sidebarChat_info > h2 {
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.sidebarChat_info > p {
+  font-size: 12px;
+  font-family: "Times New Roman", Times, serif;
+}

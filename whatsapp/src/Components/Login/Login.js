@@ -8,10 +8,12 @@ import { useStateValue } from "../../StateProvider/stateProvider";
 function Login() {
   const [{}, dispatch] = useStateValue();
 
-  // to sign in by email
+  // to sign in by email(google auth)..
+  // u have to go to ur fierbase db to authentiactaion and enable google auth
   const signIn = () => {
     auth
       .signInWithPopup(provider)
+      // after loggen in put the results on then user globally declared on reducer.js(which was initally empty)
       .then((result) => {
         dispatch({
           type: "SET_USER",
@@ -20,6 +22,7 @@ function Login() {
       })
       .catch((error) => alert(error.message));
   };
+
   return (
     <div className="login">
       <div className="login_container">

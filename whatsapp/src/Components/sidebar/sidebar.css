@@ -36,7 +36,7 @@
   border-radius: 20px;
 }
 .sidebar_searchContainer > input {
-  border: none;
+  border: none !important;
   margin-left: 10px;
 }
 
@@ -51,4 +51,8 @@
   /* /// */
   background-color: white;
   overflow: scroll;
+}
+
+.user_image {
+  width: 35px;
 }

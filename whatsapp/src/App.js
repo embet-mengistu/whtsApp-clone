@@ -24,11 +24,12 @@ function App() {
                 </>
               }
             />
+
             <Route
               path="/"
               element={
                 <>
-                  <Sidebar /> <Chat />
+                  <Sidebar />
                 </>
               }
             />
